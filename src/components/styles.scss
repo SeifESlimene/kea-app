@@ -1,0 +1,46 @@
+// $body-color: red;
+
+// body {
+//   color: $body-color;
+// }
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+nav,
+main {
+  background-color: rgb(158, 224, 224);
+  padding: 10px;
+}
+
+main {
+  background-color: beige;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+main h1 {
+  color: blue;
+}
