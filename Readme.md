@@ -1,7 +1,13 @@
+<style>
+#custom-id{
+    color:red;
+}
+</style>
+
 # This is a demo App For Kea JS 👏👏👏👏👏
----
-👍 ## **Author Of This Demo** 👍
+## 👍 **Author Of This Demo** 👍
 ![Seif Eddine Slimene](https://avatars.githubusercontent.com/u/57100260?v=4)
+---
 ## *My Personal Website*
 😊 [My Personal Website](https://www.seifeddineslimene.com) 😊
 ### For Installing This App Do
