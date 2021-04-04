@@ -1,16 +1,19 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const WebpackBundleAnalyzer = require("webpack-bundle-analyzer")
+//   .BundleAnalyzerPlugin;
 
 module.exports = {
   // the output bundle won't be optimized for production but suitable for development
   mode: "development",
+  devtool: "eval-source-map",
   // the app entry point is /src/index.js
   entry: path.resolve(__dirname, "src", "index.js"),
   output: {
     // the output of the webpack build will be in /dist directory
     path: path.resolve(__dirname, "dist"),
     // the filename of the JS bundle will be bundle.js
-    filename: "bundle.js",
+    filename: "[name].js",
   },
   module: {
     rules: [
@@ -23,8 +26,19 @@ module.exports = {
         loader: "babel-loader",
         options: {
           // attach the presets to the loader (most projects use .babelrc file instead)
-          presets: ["@babel/preset-env", "@babel/preset-react"],
+          // presets: ["@babel/preset-env", "@babel/preset-react"],
         },
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
       },
     ],
   },
@@ -32,7 +46,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),
-      favicon: './src/assets/favicon.ico',
+      favicon: "./src/assets/favicon.ico",
+      inject: "body",
     }),
+    // new WebpackBundleAnalyzer(),
   ],
 };
