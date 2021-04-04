@@ -1,9 +1,3 @@
-<style>
-#custom-id{
-    color:red;
-}
-</style>
-
 # This is a demo App For Kea JS 👏👏👏👏👏
 ## 👍 **Author Of This Demo** 👍
 ![Seif Eddine Slimene](https://avatars.githubusercontent.com/u/57100260?v=4)
@@ -28,8 +22,6 @@
 ### Term And Definition
 WDS
 : Webpack Development Server
-### Heading ID
-### My Great Heading {#custom-id}
 ### Strikethrough
 ~~The world is flat.~~
 ### Fenced Code Block
@@ -45,6 +37,8 @@ WDS
 | :---        |    :----:   |          ---: |
 | Header      | Title       | Here's this   |
 | Paragraph   | Text        | And more      |
+### Heading ID
+### My Great Heading {#custom-id}
 ### Footnote
 Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 [^1]: This is the first footnote.
