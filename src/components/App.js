@@ -2,10 +2,8 @@ import "./styles.scss";
 import { hot } from "react-hot-loader/root";
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-// Loadable Components
 import loadable from "@loadable/component";
 
-// Loadable Components
 const AsyncHome = loadable(() => import("./Home"));
 const AsyncMovies = loadable(() => import("./Movies/Movies"));
 
