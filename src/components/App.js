@@ -6,7 +6,7 @@ import loadable from '@loadable/component';
 
 const Home = loadable(() => import('./Home'));
 const Movies = loadable(() => import('./Movies/Movies'));
-// const Github = loadable(() => import('./Github/Github'));
+const Github = loadable(() => import('./Github/Github'));
 // const Sliders = loadable(() => import('./Sliders/Sliders'));
 
 class App extends Component {
@@ -22,9 +22,9 @@ class App extends Component {
               <li>
                 <Link to="/movies">Movies</Link>
               </li>
-              {/* <li>
+              <li>
                 <Link to="/github">Github</Link>
-              </li> */}
+              </li>
             </ul>
           </nav>
           <main>
@@ -35,9 +35,9 @@ class App extends Component {
               <Route path="/movies">
                 <Movies />
               </Route>
-              {/* <Route path="/github">
+              <Route path="/github">
                 <Github />
-              </Route> */}
+              </Route>
               {/* <Route path="/sliders">
                 <Sliders />
               </Route> */}

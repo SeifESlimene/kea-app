@@ -1,4 +1,5 @@
-// import { hot } from 'react-hot-loader/root';
+/* eslint-disable no-nested-ternary */
+import { hot } from 'react-hot-loader/root';
 import React, { Component } from 'react';
 import { kea, useActions, useValues } from 'kea';
 
@@ -113,5 +114,4 @@ function GithubScene() {
   );
 }
 
-export default GithubScene;
-// export default hot(GithubScene);
+export default hot(GithubScene);
