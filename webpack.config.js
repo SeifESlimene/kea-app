@@ -1,20 +1,20 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpack = require("webpack");
-const WebpackBundleAnalyzer = require("webpack-bundle-analyzer")
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const WebpackBundleAnalyzer = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 
 module.exports = {
-  mode: "development",
-  devtool: "eval-source-map",
-  entry: ["react-hot-loader/patch", path.resolve(__dirname, "src", "index.js")],
+  mode: 'development',
+  devtool: 'eval-source-map',
+  entry: ['react-hot-loader/patch', path.resolve(__dirname, 'src', 'index.js')],
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
   },
   resolve: {
     alias: {
-      "react-dom": "@hot-loader/react-dom",
+      'react-dom': '@hot-loader/react-dom',
     },
   },
   module: {
@@ -22,11 +22,11 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
@@ -38,9 +38,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src", "index.html"),
-      favicon: "./src/assets/favicon.ico",
-      inject: "body",
+      template: path.resolve(__dirname, 'src', 'index.html'),
+      favicon: './src/assets/favicon.ico',
+      inject: 'body',
     }),
     new webpack.HotModuleReplacementPlugin(),
     new WebpackBundleAnalyzer(),

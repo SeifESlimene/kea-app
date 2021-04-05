@@ -1,11 +1,11 @@
-import "./styles.scss";
-import { hot } from "react-hot-loader/root";
-import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import loadable from "@loadable/component";
+import './styles.scss';
+import { hot } from 'react-hot-loader/root';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import loadable from '@loadable/component';
 
-const AsyncHome = loadable(() => import("./Home"));
-const AsyncMovies = loadable(() => import("./Movies/Movies"));
+const AsyncHome = loadable(() => import('./Home'));
+const AsyncMovies = loadable(() => import('./Movies/Movies'));
 
 class App extends Component {
   render() {

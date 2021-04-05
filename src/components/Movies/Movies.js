@@ -1,6 +1,6 @@
-import "./styles.scss";
-import { hot } from 'react-hot-loader/root'
-import React, { Component } from "react";
+import './styles.scss';
+import { hot } from 'react-hot-loader/root';
+import React, { Component } from 'react';
 
 class Movies extends Component {
   render() {

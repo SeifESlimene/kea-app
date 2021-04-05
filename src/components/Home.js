@@ -1,5 +1,5 @@
-import { hot } from 'react-hot-loader/root'
-import React, { Component } from "react";
+import { hot } from 'react-hot-loader/root';
+import React, { Component } from 'react';
 
 class Home extends Component {
   render() {
