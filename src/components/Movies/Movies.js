@@ -1,5 +1,5 @@
 import "./styles.scss";
-// import { hot } from 'react-hot-loader/root'
+import { hot } from 'react-hot-loader/root'
 import React, { Component } from "react";
 
 class Movies extends Component {
@@ -19,5 +19,4 @@ class Movies extends Component {
   }
 }
 
-// export default hot(Movies);
-export default Movies;
+export default hot(Movies);
