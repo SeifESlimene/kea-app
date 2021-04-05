@@ -1,0 +1,12 @@
+{
+    "extends": [
+        "airbnb",
+        "prettier",
+        "plugin:react/recommended"
+    ],
+    "plugins": [
+        "react",
+        "prettier"
+    ],
+    "rules": {}
+}
