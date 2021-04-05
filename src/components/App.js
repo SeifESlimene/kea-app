@@ -1,4 +1,5 @@
 import "./styles.scss";
+import { hot } from "react-hot-loader/root";
 import React, { Component, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // Code Splitting Using React Loadable
@@ -6,11 +7,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // Loading Component Either For Code Splitting With React Loadable Or Suspense Fallback
 import Loading from "./my-loading-component";
 // Normal Import
-// import Home from "./Home";
-// import Movies from "./Movies";
+import Home from "./Home";
+import Movies from "./Movies/Movies";
 // Using Lazy For Code Splitting
-const Home = lazy(() => import("./Home"));
-const Movies = lazy(() => import("./Movies/Movies"));
+// const Home = lazy(() => import("./Home"));
+// const Movies = lazy(() => import("./Movies/Movies"));
 
 // const AsyncHome = Loadable({
 //   loader: () => import("./Home"),
@@ -21,10 +22,10 @@ const Movies = lazy(() => import("./Movies/Movies"));
 //   loading: Loading,
 // });
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
-      <Suspense fallback={<Loading />}>
+      // <Suspense fallback={<Loading />}>
         <Router>
           <div>
             <nav>
@@ -51,11 +52,9 @@ export default class App extends Component {
             </main>
           </div>
         </Router>
-      </Suspense>
+      // </Suspense>
     );
   }
 }
 
-if (module.hot) {
-  module.hot.accept()
-}
+export default hot(App);

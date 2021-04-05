@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 // const WebpackBundleAnalyzer = require("webpack-bundle-analyzer")
 //   .BundleAnalyzerPlugin;
 
@@ -8,12 +9,17 @@ module.exports = {
   mode: "development",
   devtool: "eval-source-map",
   // the app entry point is /src/index.js
-  entry: path.resolve(__dirname, "src", "index.js"),
+  entry: ["react-hot-loader/patch", path.resolve(__dirname, "src", "index.js")],
   output: {
     // the output of the webpack build will be in /dist directory
     path: path.resolve(__dirname, "dist"),
     // the filename of the JS bundle will be bundle.js
-    filename: "[name].js",
+    filename: "[name].bundle.js",
+  },
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
   },
   module: {
     rules: [
@@ -42,6 +48,12 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    compress: true,
+    port: 8080,
+    hot: true,
+    open: true,
+  },
   // add a custom index.html as the template
   plugins: [
     new HtmlWebpackPlugin({
@@ -49,6 +61,7 @@ module.exports = {
       favicon: "./src/assets/favicon.ico",
       inject: "body",
     }),
+    new webpack.HotModuleReplacementPlugin(),
     // new WebpackBundleAnalyzer(),
   ],
 };
