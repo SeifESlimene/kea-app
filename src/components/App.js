@@ -4,8 +4,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import loadable from '@loadable/component';
 
-const AsyncHome = loadable(() => import('./Home'));
-const AsyncMovies = loadable(() => import('./Movies/Movies'));
+const Home = loadable(() => import('./Home'));
+const Movies = loadable(() => import('./Movies/Movies'));
+// const Github = loadable(() => import('./Github/Github'));
+// const Sliders = loadable(() => import('./Sliders/Sliders'));
 
 class App extends Component {
   render() {
@@ -20,16 +22,25 @@ class App extends Component {
               <li>
                 <Link to="/movies">Movies</Link>
               </li>
+              {/* <li>
+                <Link to="/github">Github</Link>
+              </li> */}
             </ul>
           </nav>
           <main>
             <Switch>
               <Route exact path="/">
-                <AsyncHome />
+                <Home />
               </Route>
               <Route path="/movies">
-                <AsyncMovies />
+                <Movies />
               </Route>
+              {/* <Route path="/github">
+                <Github />
+              </Route> */}
+              {/* <Route path="/sliders">
+                <Sliders />
+              </Route> */}
             </Switch>
           </main>
         </div>
