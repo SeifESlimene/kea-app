@@ -1,7 +1,8 @@
 import "./styles.scss";
+// import { hot } from 'react-hot-loader/root'
 import React, { Component } from "react";
 
-export default class Movies extends Component {
+class Movies extends Component {
   render() {
     return (
       <div>
@@ -17,3 +18,6 @@ export default class Movies extends Component {
     );
   }
 }
+
+// export default hot(Movies);
+export default Movies;

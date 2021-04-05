@@ -3,24 +3,24 @@ import { hot } from "react-hot-loader/root";
 import React, { Component, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // Code Splitting Using React Loadable
-// import Loadable from "react-loadable";
+import Loadable from "react-loadable";
 // Loading Component Either For Code Splitting With React Loadable Or Suspense Fallback
 import Loading from "./my-loading-component";
 // Normal Import
-import Home from "./Home";
-import Movies from "./Movies/Movies";
+// import Home from "./Home";
+// import Movies from "./Movies/Movies";
 // Using Lazy For Code Splitting
 // const Home = lazy(() => import("./Home"));
 // const Movies = lazy(() => import("./Movies/Movies"));
 
-// const AsyncHome = Loadable({
-//   loader: () => import("./Home"),
-//   loading: Loading,
-// });
-// const AsyncMovies = Loadable({
-//   loader: () => import("./Movies"),
-//   loading: Loading,
-// });
+const AsyncHome = Loadable({
+  loader: () => import("./Home"),
+  loading: Loading,
+});
+const AsyncMovies = Loadable({
+  loader: () => import("./Movies/Movies"),
+  loading: Loading,
+});
 
 class App extends Component {
   render() {
@@ -41,12 +41,12 @@ class App extends Component {
             <main>
               <Switch>
                 <Route exact path="/">
-                  {/* <AsyncHome /> */}
-                  <Home />
+                  <AsyncHome />
+                  {/* <Home /> */}
                 </Route>
                 <Route path="/movies">
-                  {/* <AsyncMovies /> */}
-                  <Movies />
+                  <AsyncMovies />
+                  {/* <Movies /> */}
                 </Route>
               </Switch>
             </main>
@@ -58,3 +58,4 @@ class App extends Component {
 }
 
 export default hot(App);
+// export default App;
