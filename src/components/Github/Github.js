@@ -1,6 +1,5 @@
-/* eslint-disable no-nested-ternary */
 import { hot } from 'react-hot-loader/root';
-import React, { Component } from 'react';
+import React from 'react';
 import { kea, useActions, useValues } from 'kea';
 
 const API_URL = 'https://api.github.com';
@@ -70,6 +69,11 @@ const logic = kea({
       }
     },
   }),
+  events: ({ actions, values }) => ({
+    afterMount: () => {
+      actions.setUsername(values.username)
+    }
+  })
 });
 
 function GithubScene() {
