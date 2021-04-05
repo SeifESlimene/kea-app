@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import thunkPlugin from 'kea-thunk';
-// import sagaPlugin from 'kea-saga';
+import sagaPlugin from 'kea-saga';
 import { resetContext, getContext } from 'kea';
 // import { loadersPlugin } from 'kea-loaders';
 import listenersPlugin from 'kea-listeners';
@@ -17,7 +17,7 @@ resetContext({
     // loadersPlugin({}),
     // thunkPlugin,
     // socketPlugin,
-    // sagaPlugin({ useLegacyUnboundActions: false }),
+    sagaPlugin,
     // routerPlugin({}),
     listenersPlugin,
     // localStoragePlugin,

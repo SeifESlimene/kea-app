@@ -1,16 +1,21 @@
-// slider/index.js
 import './styles.scss';
-
+import { hot } from 'react-hot-loader/root';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { kea } from 'kea';
 
-import { take, race, put } from 'redux-saga/effects';
+import { take, race, put, delay } from 'redux-saga/effects';
 
-import delay from '~/utils/delay';
-import range from '~/utils/range';
+const range = (n) => {
+  var arr = [...Array(n).keys()];
+  return arr;
+};
 
-import images from './images';
+const images = [
+  { src: 'https://picsum.photos/id/237/500/300', author: 'Seif Eddine Slimene' },
+  { src: 'https://picsum.photos/id/238/500/300', author: 'Seif Eddine Slimene' },
+  { src: 'https://picsum.photos/id/350/500/300', author: 'Seif Eddine Slimene' },
+];
 
 @kea({
   key: (props) => props.id,
@@ -58,7 +63,7 @@ import images from './images';
         change: take(updateSlide),
         timeout: delay(5000),
       });
-
+      console.log(timeout)
       if (timeout) {
         // use this.get(..) to select the latest data from redux
         const currentSlide = yield this.get('currentSlide');
@@ -89,15 +94,38 @@ import images from './images';
     },
   },
 })
-
-// index.js
-export default class SlidersScene extends Component {
+class Slider extends Component {
   render() {
+    const { currentSlide, currentImage } = this.props;
+    const { updateSlide } = this.actions;
+
+    const title = `Image copyright by ${currentImage.author}`;
+
     return (
-      <div className="slider-container">
-        <Slider id={1} initialSlide={0} />
-        <Slider id={2} initialSlide={1} />
+      <div className="kea-slider">
+        <img src={currentImage.src} alt={title} title={title} />
+        <div className="buttons">
+          {range(images.length).map((i) => (
+            <span
+              key={i}
+              className={i === currentSlide ? 'selected' : ''}
+              onClick={() => updateSlide(i)}
+            />
+          ))}
+        </div>
       </div>
     );
   }
 }
+
+class SlidersScene extends Component {
+  render() {
+    return (
+      <div className="slider-container">
+        <Slider id={1} initialSlide={0} />
+      </div>
+    );
+  }
+}
+
+export default hot(SlidersScene);

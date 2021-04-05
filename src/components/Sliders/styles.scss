@@ -1,0 +1,43 @@
+.slider-container {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.kea-slider {
+  display: block;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  position: relative;
+}
+
+.kea-slider img {
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.kea-slider .buttons {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  line-height: 10px;
+  height: 10px;
+}
+
+.kea-slider .buttons span {
+  background: #fff;
+  cursor: pointer;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  margin: 0 5px;
+}
+
+.kea-slider .buttons span.selected {
+  background: #08ff04;
+}
