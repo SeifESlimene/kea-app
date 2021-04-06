@@ -1,3 +1,12 @@
+<style>
+#custom-id {
+    color : red;
+}
+#seif {
+  color: green;
+}
+</style>
+
 # This is a demo App For Kea JS 👏👏👏👏👏
 
 ## 👍 **Author Of This Demo** 👍
@@ -57,7 +66,7 @@ WDS
 
 ### Heading ID
 
-### My Great Heading {#custom-id}
+### [My Great Heading](#custom-id)
 
 ### Footnote
 
@@ -65,3 +74,7 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
 [^1]: This is the first footnote.
 [^bignote]: Here's one with multiple paragraphs and code.
+
+## [custom-id]
+
+## seif
