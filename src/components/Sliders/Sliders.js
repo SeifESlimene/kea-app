@@ -63,7 +63,6 @@ const images = [
         change: take(updateSlide),
         timeout: delay(5000),
       });
-      console.log(timeout)
       if (timeout) {
         // use this.get(..) to select the latest data from redux
         const currentSlide = yield this.get('currentSlide');
