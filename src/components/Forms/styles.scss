@@ -1,0 +1,38 @@
+.form-field {
+	margin-bottom: 10px;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: flex-start;
+	justify-content: center;
+  label {
+    display: inline-block;
+    min-width: 75px;
+		font-weight: 600;
+  }
+  input {
+    display: inline-block;
+    min-width: 400px;
+    box-sizing: border-box;
+  }
+  textarea {
+    display: inline-block;
+    min-width: 400px;
+    box-sizing: border-box;
+    height: 100px;
+  }
+	.button-container {
+		min-width: 400px;
+	}
+}
+
+button {
+  height: 30px;
+  width: 120px;
+  box-sizing: border-box;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 2px;
+}

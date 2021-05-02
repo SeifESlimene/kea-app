@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 class Home extends Component {
   render() {
     return (
-      <div>
-        <h2>Welcome To Movie Application</h2>
+      <div class="home-container">
+        <h2>Welcome To My Kea Playground Space</h2>
       </div>
     );
   }

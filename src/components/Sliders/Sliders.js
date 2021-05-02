@@ -12,9 +12,18 @@ const range = (n) => {
 };
 
 const images = [
-  { src: 'https://picsum.photos/id/237/500/300', author: 'Seif Eddine Slimene' },
-  { src: 'https://picsum.photos/id/238/500/300', author: 'Seif Eddine Slimene' },
-  { src: 'https://picsum.photos/id/350/500/300', author: 'Seif Eddine Slimene' },
+  {
+    src: 'https://picsum.photos/id/237/500/300',
+    author: 'Seif Eddine Slimene',
+  },
+  {
+    src: 'https://picsum.photos/id/238/500/300',
+    author: 'Seif Eddine Slimene',
+  },
+  {
+    src: 'https://picsum.photos/id/350/500/300',
+    author: 'Seif Eddine Slimene',
+  },
 ];
 
 @kea({
@@ -52,6 +61,8 @@ const images = [
   // Read the redux-saga documentation to understand the different
   // functions like: race(), put(), take(), etc
   start: function* () {
+    // This Also Works For Logging Stuff
+    // const { updateSlide } = this.actionCreators;
     const { updateSlide } = this.actions;
 
     console.log('Starting homepage slider saga');

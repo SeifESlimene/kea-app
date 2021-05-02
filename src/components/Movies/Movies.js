@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 class Movies extends Component {
   render() {
     return (
-      <div>
+      <div className="movie-container">
         <h1>List Of Movies</h1>
         <ul>
           <li>Movie 1</li>

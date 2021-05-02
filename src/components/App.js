@@ -1,5 +1,5 @@
-import './styles.scss';
 import { hot } from 'react-hot-loader/root';
+import './styles.scss';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import loadable from '@loadable/component';
@@ -8,6 +8,9 @@ const Home = loadable(() => import('./Home'));
 const Movies = loadable(() => import('./Movies/Movies'));
 const Github = loadable(() => import('./Github/Github'));
 const Sliders = loadable(() => import('./Sliders/Sliders'));
+const Counter = loadable(() => import('./Counter/Counter'));
+const Forms = loadable(() => import('./Forms/Forms'));
+const Three = loadable(() => import('./Three/Three.js'));
 const Test = loadable(() => import('./Test/Test'));
 
 class App extends Component {
@@ -20,9 +23,9 @@ class App extends Component {
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/movies">Movies</Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/github">Github</Link>
               </li>
@@ -30,27 +33,47 @@ class App extends Component {
                 <Link to="/sliders">Sliders</Link>
               </li>
               <li>
-                <Link to="/test">Test</Link>
+                <Link to="/counter">Counter</Link>
               </li>
+              <li>
+                <Link to="/forms">Forms</Link>
+              </li>
+              <li>
+                <Link to="/three">Three</Link>
+              </li>
+              {/* <li>
+                <Link to="/test">Test</Link>
+              </li> */}
             </ul>
           </nav>
-          <main>
+          <main
+          style={{'height':  'calc(100vh - 50px)'}}
+          >
             <Switch>
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route path="/movies">
+              {/* <Route path="/movies">
                 <Movies />
-              </Route>
+              </Route> */}
               <Route path="/github">
                 <Github />
               </Route>
               <Route path="/sliders">
                 <Sliders />
               </Route>
-              <Route path="/test">
-                <Test />
+              <Route path="/counter">
+                <Counter />
               </Route>
+              <Route path="/forms">
+                <Forms />
+              </Route>
+              <Route path="/three">
+                <Three />
+              </Route>
+              {/* <Route path="/test">
+                <Test />
+              </Route> */}
             </Switch>
           </main>
         </div>

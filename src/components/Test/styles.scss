@@ -1,7 +1,18 @@
+@mixin test {
+  text-decoration: underline;
+  span {
+    font-size: 200px;
+  }
+}
+
 #test {
-  h1 {
+  .h1 {
     color: green;
     font-weight: bold;
-		font-style: italic;
+    font-style: italic;
+    @include test
+  }
+  .input {
+    border: none;
   }
 }

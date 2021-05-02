@@ -17,7 +17,7 @@ resetContext({
     // loadersPlugin({}),
     // thunkPlugin,
     // socketPlugin,
-    sagaPlugin,
+    sagaPlugin({ useLegacyUnboundActions: true }),
     // routerPlugin({}),
     listenersPlugin,
     // localStoragePlugin,

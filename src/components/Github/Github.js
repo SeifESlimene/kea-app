@@ -13,7 +13,7 @@ const logic = kea({
 
   reducers: ({ actions }) => ({
     username: [
-      'keajs',
+      'seifeslimene',
       {
         [actions.setUsername]: (_, payload) => payload.username,
       },
@@ -45,8 +45,12 @@ const logic = kea({
   selectors: ({ selectors }) => ({
     sortedRepositories: [
       () => [selectors.repositories],
-      (repositories) =>
-        repositories.sort((a, b) => b.stargazers_count - a.stargazers_count),
+      (repositories) => {
+        console.log(repositories);
+        return repositories.sort(
+          (a, b) => b.forks_count - a.forks_count
+        );
+      },
     ],
   }),
 
@@ -71,9 +75,9 @@ const logic = kea({
   }),
   events: ({ actions, values }) => ({
     afterMount: () => {
-      actions.setUsername(values.username)
-    }
-  })
+      actions.setUsername(values.username);
+    },
+  }),
 });
 
 function GithubScene() {
@@ -88,18 +92,19 @@ function GithubScene() {
 
   return (
     <div className="example-github-scene">
-      <div style={{ marginBottom: 20 }}>
+      <div style={{ textAlign: 'center' }}>
         <h1>Search for a github user</h1>
         <input
           value={username}
           type="text"
           onChange={(e) => setUsername(e.target.value)}
+          style={{ margin: '10px 0' }}
         />
       </div>
       {isLoading ? (
         <div>Loading...</div>
       ) : repositories.length > 0 ? (
-        <div>
+        <div style={{ textAlign: 'center' }}>
           Found {repositories.length} repositories for user {username}!
           {sortedRepositories.map((repo) => (
             <div key={repo.id}>
